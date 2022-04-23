@@ -55,6 +55,10 @@ class AutoClone(object):
     time_range : int
         range of time for submission query (seconds).
         e.g. : 3600 -> get submission of (current-3600 sec ~ current)
+    cur_unix_time : int
+        current unix time
+    ac_only : bool
+        flag whether to save non-ac code. this feature is currently disabled
     submissions : list of dict
         request result from AtCoder Problems Submission API
     """
@@ -70,7 +74,7 @@ class AutoClone(object):
         Get submission information via AtCoder Problems API
 
         Returns
-        =======
+        -------
         submissions : dict
         """
         unix_time = self.cur_unix_time - self.time_range
@@ -80,7 +84,6 @@ class AutoClone(object):
 
         if not result.status_code == 200:
             raise Exception(f"{result.status_code} : Something went wrong")
-        pprint.pprint(result.json())
         self.submissions = result.json()
 
     def get_and_write_submitted_codes(self) -> None:
@@ -104,11 +107,29 @@ class AutoClone(object):
                 pass
 
     def __call__(self):
+        """
+        Excecute AutoClone
+        """
         self.get_submissions()
         self.get_and_write_submitted_codes()
 
     @staticmethod
     def get_code(contest_id: str, submission_id: int) -> str:
+        """
+        Get code from AtCoder page
+
+        Parameters
+        ----------
+        contest_id : str
+            target contest_id
+        submission_id : int
+            target submissio_id
+
+        Returns
+        -------
+        str
+            str of raw code without extension
+        """
         submission_url = (
             f"https://atcoder.jp/contests/{contest_id}/submissions/{submission_id}"
         )
@@ -118,6 +139,20 @@ class AutoClone(object):
 
     @staticmethod
     def write_code(code, contest_id, problem_id, language) -> None:
+        """
+        Write code as new file
+
+        Parameter
+        ---------
+        code : str
+            str of raw code without extension
+        contest_id : str
+            target contest_id. used as folder name
+        problem_id : str
+            target problem_id. used as file name
+        language : str
+            target programming language (not extension)
+        """
         extension = AutoClone.get_extension(language)
         path = f"{contest_id}/{problem_id}.{extension}"
         os.makedirs(os.path.dirname(path), exist_ok=True)
@@ -130,7 +165,7 @@ class AutoClone(object):
         Load yml config file
 
         Returns
-        =======
+        -------
         config : dict
             dict of config file.
         """
@@ -139,7 +174,20 @@ class AutoClone(object):
         return config
 
     @staticmethod
-    def get_extension(language) -> str:
+    def get_extension(language: str) -> str:
+        """
+        Get extension of specified programming language
+
+        Parameters
+        ----------
+        language : str
+            target programming language (not extension)
+
+        Returns
+        -------
+        extension : str
+            file extension of the target language
+        """
         extension = None
         for lang in EXTENSIONS.keys():
             if lang in language:
