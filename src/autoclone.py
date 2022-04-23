@@ -69,6 +69,9 @@ class AutoClone(object):
         self.cur_unix_time = int(datetime.timestamp(datetime.now()))
         self.ac_only = True  # future todo
 
+        if self.user_id is None:
+            raise Exception("user_id not found. you must configure config/config.yml")
+
     def get_submissions(self) -> None:
         """
         Get submission information via AtCoder Problems API
@@ -78,7 +81,6 @@ class AutoClone(object):
         submissions : dict
         """
         unix_time = self.cur_unix_time - self.time_range
-        print(unix_time)
         params = {"user": self.user_id, "from_second": unix_time}
         result = requests.get(url=PROBLEMS_API_ENDPOINT, params=params)
 
