@@ -13,7 +13,7 @@ Automatically clone your AtCoder submissions to your GitHub🚀
 
 5. Your codes will be cloned every night (around 11:45pm JST) to your repository, if you have new submissions🚀😄
 
-6. (Optional) You can delete this README.md to create your own.
+6. (Optional) You can delete this README.md to create your own. My example : https://github.com/kuriyan1204/AtCoder-Submissions
 
 ## Licence
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details
