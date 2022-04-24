@@ -1,5 +1,7 @@
-name: Manual Update
-on: [ workflow_dispatch ]
+name: Scheduled Update
+on:
+  schedule:
+    - cron: '45 14 * * *' 
 
 jobs:
   build:
