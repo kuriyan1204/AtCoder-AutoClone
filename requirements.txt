@@ -1,2 +1,3 @@
+bs4
+pyyaml
 requests
-bs4 == "0.0.1"
