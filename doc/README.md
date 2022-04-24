@@ -11,9 +11,7 @@ Automatically clone your AtCoder submissions to your GitHub🚀
 
 4. For the initialization, run `Manual Update` workflow on your `main` branch, then your latest 3-weeks of submissions will automatically push to your repo🚀 ![image](https://user-images.githubusercontent.com/73727292/164983404-841a43b9-ef4e-4570-aa23-599d83b170c8.png)
 
-5. Your codes will be cloned every night (around 11:45pm JST) to your repository, if you have new submissions🚀😄
-
-6. (Optional) You can delete this README.md to create your own.
+5. Your codes will be cloned every night (around 11:45pm JST) to your repository, if you have new submissions😄
 
 ## Licence
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details
