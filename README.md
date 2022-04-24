@@ -15,7 +15,9 @@ EN : [README_EN](./doc/README_EN.md)
 
 5.  毎晩11時45分頃に新しい提出が自動であなたのレポジトリに更新されます！🚀😄
 
-6. (Optional)　このREADMEを削除して，オリジナルのREADMEに差し替えてください． 例：https://github.com/kuriyan1204/AtCoder-Submissions
+6. (Optional)　このREADMEを削除して，オリジナルのREADMEに差し替えてください． 　　
+
+使用例 ： https://github.com/kuriyan1204/AtCoder-Submissions
 
 ## Contribution
 もし不具合や追加して欲しい機能があれば気軽にissueを立ててください🤗
