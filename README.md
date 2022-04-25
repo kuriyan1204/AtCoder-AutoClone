@@ -1,6 +1,6 @@
 # AtCoder-AutoClone
 Automatically clone your AtCoder submissions to your GitHub🚀  
-EN : [README_EN](./doc/README_EN.md)
+EN : [README_EN](./doc/README_en.md)
 
 ## Usage
 1. このレポジトリを自分のGitHubにFolkしてください． レポジトリ名は自分の好きなもの(例：`MyAtCoder-Submissions`)を設定してOKです:   
